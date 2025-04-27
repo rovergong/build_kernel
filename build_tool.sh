@@ -48,7 +48,7 @@ clean(){
 build_kernel(){
 	export KBUILD_BUILD_USER="zahi0"  
 	export KBUILD_BUILD_HOST="zahi0-server"  
-	make $args gemini_defconfig #修改配置文件
+	make $args jason_defconfig #修改配置文件
 	if [ $? -ne 0 ]; then
       		exit 0
         fi
@@ -97,4 +97,5 @@ cd kernel_src
 clean
 build_kernel
 cp ./out/arch/arm64/boot/Image.gz-dtb Image.gz-dtb
+cp ./out/arch/arm64/boot/Image Image
 cd ..
