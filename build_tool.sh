@@ -48,7 +48,7 @@ clean(){
 build_kernel(){
 	export KBUILD_BUILD_USER="zahi0"  
 	export KBUILD_BUILD_HOST="zahi0-server"  
-	make $args lineage_oneplus5_defconfig #修改配置文件
+	make $args vendor/msm8937_defconfig #修改配置文件
 	if [ $? -ne 0 ]; then
       		exit 0
         fi
@@ -88,8 +88,7 @@ OBJDUMP=${clang_path}/llvm-objdump \
 STRIP=${clang_path}/llvm-strip \
 CROSS_COMPILE=$gcc_path \
 LD=${clang_path}/ld.lld \
-CROSS_COMPILE_ARM32=$gcc_32_path \
-LOCALVERSION=-$date  "
+CROSS_COMPILE_ARM32=$gcc_32_path"
 
 
 
@@ -97,5 +96,4 @@ cd kernel_src
 clean
 build_kernel
 cp ./out/arch/arm64/boot/Image.gz-dtb Image.gz-dtb
-cp ./out/arch/arm64/boot/Image Image
 cd ..
