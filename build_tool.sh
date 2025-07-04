@@ -48,7 +48,7 @@ clean(){
 build_kernel(){
 	export KBUILD_BUILD_USER="H2O"  
 	export KBUILD_BUILD_HOST="H2O-PC"  
-	make $args vendor/cmi_defconfig #修改配置文件
+	make $args vendor/xiaomi/cmi.config #修改配置文件
 	if [ $? -ne 0 ]; then
       		exit 0
         fi
