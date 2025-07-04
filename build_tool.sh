@@ -46,9 +46,9 @@ clean(){
 
 
 build_kernel(){
-	export KBUILD_BUILD_USER="zahi0"  
-	export KBUILD_BUILD_HOST="zahi0-server"  
-	make $args vendor/msm8937_defconfig #修改配置文件
+	export KBUILD_BUILD_USER="H2O"  
+	export KBUILD_BUILD_HOST="H2O-PC"  
+	make $args vendor/cmi_defconfig #修改配置文件
 	if [ $? -ne 0 ]; then
       		exit 0
         fi
