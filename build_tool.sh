@@ -95,5 +95,5 @@ CROSS_COMPILE_ARM32=$gcc_32_path"
 cd kernel_src
 clean
 build_kernel
-cp ./out/arch/arm64/boot/Image.gz-dtb Image.gz-dtb
+#cp ./out/arch/arm64/boot/Image.gz-dtb Image.gz-dtb
 cd ..
